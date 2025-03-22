@@ -14,7 +14,6 @@
 
 @section('content')
     <div class="max-w-4xl mx-auto px-4">
-        <!--<h1>Bienvenido a la página principal</h1>-->
         <x-alert2 type="info" class="mb-4"> <!-- paso de información por los atributos de la alerta-->
             <!--llamando al componente alert views.components.alert.blade.php -->
             <x-slot name="title">
