@@ -15,13 +15,14 @@ Route::get('prueba', function () {
 
     //crear nuevo post
     // $post = new Post;
-    // $post->title = 'Titulo de prueba 3';
-    // $post->content = 'Contenido de prueba 3';
-    // $post->categoria = 'Contenido de categoria 3';
+    // $post->title = 'Titulo de prueba 4';
+    // $post->content = 'Contenido de prueba 4';
+    // $post->categoria = 'Contenido de categoria 4';
     // $post->save();
 
     //buscar un post por id
-    //$post = Post::find(1);
+    $post = Post::find(4);
+    return $post;
 
     //buscar un post por titulo y modificarlo
     // $post = Post::where('title', 'Titulo de prueba 1')
