@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return "Pagina inicial";
+    //comentario prueba
 });
 
 Route::get('/posts', function () {
