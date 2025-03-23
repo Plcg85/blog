@@ -41,6 +41,16 @@ class PostController extends Controller
         // $post->slug = $request->slug;
         // $post->content = $request->content;
         // $post->category = $request->category;
+
+        $request->validate([ //regla de validacion
+            'title' => ['required , min:5 , max:255'],
+            'slug' => 'required|unique:posts',
+            'content' => 'required',
+            'category' => 'required'
+        ]);
+
+
+
         Post::create($request->all());
 
         //$post->save();
@@ -55,6 +65,13 @@ class PostController extends Controller
 
     public function update(Request $request, Post $post)
     {
+        $request->validate([ //regla de validacion
+            'title' => ['required', 'min:5', 'max:255'],
+            'slug' => "required|unique:posts,slug,{$post->id}", //para que sea unico pero que se excluya el mismo
+            'content' => 'required',
+            'category' => 'required'
+        ]);
+
         $post->update($request->all());
 
         // $post->title = $request->title;
