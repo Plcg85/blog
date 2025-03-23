@@ -10,6 +10,15 @@ class Post extends Model
 {
     use HasFactory;
 
+    protected $fillable = [ //para asignacion masiva, si no coinciden, no se hacen lo contrario es protected $guarded = ['id'];
+        'title',
+        'slug',
+        'content',
+        'category',
+    ];
+
+
+
     protected $table = 'posts';
 
     protected function casts(): array //castear los valores de la base de datos
