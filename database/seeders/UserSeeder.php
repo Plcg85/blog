@@ -20,10 +20,6 @@ class UserSeeder extends Seeder
         $user->password = bcrypt('12345678');
         $user->save();
 
-        $user = new User();
-        $user->name = 'Iris godoy';
-        $user->email = 'iris@gmail.com';
-        $user->password = bcrypt('12345678');
-        $user->save();
+        User::factory(10)->create(); //utilizar los factory
     }
 }
