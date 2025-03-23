@@ -16,4 +16,7 @@
         @endforeach
     </ul>
 
+    {{-- Paginacion --}}
+    {{ $posts->links() }}
+
 </x-app-layout>
