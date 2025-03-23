@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Http\Requests\StorePostRequest;
 
 class PostController extends Controller
 {
@@ -33,7 +34,7 @@ class PostController extends Controller
         // ]);
     }
 
-    public function store(Request $request)
+    public function store(StorePostRequest $request)
     {
         // $post = new Post();
 
@@ -42,12 +43,16 @@ class PostController extends Controller
         // $post->content = $request->content;
         // $post->category = $request->category;
 
-        $request->validate([ //regla de validacion
-            'title' => ['required , min:5 , max:255'],
-            'slug' => 'required|unique:posts',
-            'content' => 'required',
-            'category' => 'required'
-        ]);
+        // $request->validate([ //regla de validacion
+        //     'title' => ['required , min:5 , max:255'],
+        //     'slug' => 'required|unique:posts',
+        //     'content' => 'required',
+        //     'category' => 'required'
+        // ],[
+
+        // ],[
+
+        // ]);
 
 
 
