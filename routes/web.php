@@ -13,6 +13,14 @@ Route::get('/posts/{post}', [PostController::class, 'show']);
 
 Route::get('prueba', function () {
 
+    //buscar un post por id
+    $post = Post::find(1);
+    //diferentes salidas
+    //return $post->created_at->format('d-m-Y');
+    //return $post->created_at->diffForHumans();
+    //return $post->published_at->format('d-m-Y');
+    return $post->is_active;
+
     //crear nuevo post
     // $post = new Post;
     // $post->title = 'Titulo de prueba 4';
@@ -20,9 +28,7 @@ Route::get('prueba', function () {
     // $post->categoria = 'Contenido de categoria 4';
     // $post->save();
 
-    //buscar un post por id
-    $post = Post::find(4);
-    return $post;
+
 
     //buscar un post por titulo y modificarlo
     // $post = Post::where('title', 'Titulo de prueba 1')

@@ -12,6 +12,15 @@ class Post extends Model
 
     protected $table = 'posts';
 
+    protected function casts(): array //castear los valores de la base de datos
+    {
+        return [
+            'published_at' => 'datetime',
+            'is_active' => 'boolean',
+        ];
+    }
+
+
     //mutadores, controlan la que los valores sean correctos antes de guardarlos hay que importar ....Attribute;
     protected function title(): Attribute
     {
