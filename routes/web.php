@@ -9,9 +9,18 @@ Route::get('/', HomeController::class); //no se le pasa el método porque este c
 
 Route::get('/posts', [PostController::class, 'index']);
 Route::get('/posts/create', [PostController::class, 'create']);
+
+Route::post('/posts', [PostController::class, 'store']);
+
 Route::get('/posts/{post}', [PostController::class, 'show']);
 
-Route::get('prueba', function () {
+Route::get('/posts/{post}/edit', [PostController::class, 'edit']);
+
+Route::put('/posts/{post}', [PostController::class, 'update']);
+
+Route::delete('/posts/{post}', [PostController::class, 'destroy']);
+
+Route::get('/prueba', function () {
 
     //buscar un post por id
     $post = Post::find(1);

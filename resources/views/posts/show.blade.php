@@ -9,7 +9,29 @@
 </head>
 
 <body>
-    <h1>Aqui se mostrará el post {{ $post }} </h1>
+
+    <a href="/posts">Volver a la lista de posts</a>
+
+    <h1>Título: {{ $post->title }} </h1>
+    <p>
+        <b>Categoría: {{ $post->category }}</b>
+    </p>
+    <p>
+        <b>Contenido: {{ $post->content }}</b>
+    </p>
+
+    <a href="/posts/{{ $post->id }}/edit">
+        Editar post
+    </a>
+
+    <form action="/posts/{{ $post->id }}" method="POST">
+        @csrf
+        @method('DELETE')
+
+        <button type="submit">Eliminar post</button>
+
+    </form>
+
 </body>
 
 </html>
