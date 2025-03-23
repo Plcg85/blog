@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Http\Requests\StorePostRequest;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\PostCreatedMail;
 
 class PostController extends Controller
 {
@@ -54,7 +56,9 @@ class PostController extends Controller
 
         // ]);
 
-        Post::create($request->all());
+        $post = Post::create($request->all());
+
+        Mail::to('plcgcpm2@gmail.com')->send(new PostCreatedMail($post));
 
         //$post->save();
 
