@@ -54,8 +54,6 @@ class PostController extends Controller
 
         // ]);
 
-
-
         Post::create($request->all());
 
         //$post->save();
