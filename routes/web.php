@@ -9,7 +9,7 @@ use App\Models\Post;
 
 
 Route::get('/', HomeController::class); //no se le pasa el método porque este controlador solo tiene un metodo invoke
-Route::apiResource('posts', PostController::class);
+Route::resource('posts', PostController::class); //para que funcione el sin api hay que quitarle la palabra api
 
 //esto era antes de usar Route::resource
 // Route::get('/posts', [PostController::class, 'index'])->name('posts.index');

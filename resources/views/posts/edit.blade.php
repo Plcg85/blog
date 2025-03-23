@@ -2,7 +2,7 @@
 
     <h1>Formulario para crear un nuevo post</h1>
 
-    <form action="{{ route('posts.update', $post->id) }}" method="POST">
+    <form action="{{ route('posts.update', $post) }}" method="POST">
 
         @csrf
         @method('PUT')
@@ -10,6 +10,13 @@
         <label>
             Título:
             <input type="text" name="title" value="{{ $post->title }}">
+        </label>
+
+        <br><br>
+
+        <label>
+            Slug:
+            <input type="text" name="slug" value="{{ $post->slug }}">
         </label>
 
         <br><br>

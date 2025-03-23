@@ -33,4 +33,9 @@ class Post extends Model
             }
         );
     }
+
+    public function getRouteKeyName(): string //para que busque por titulo en vez de por id
+    {
+        return 'slug';
+    }
 }
